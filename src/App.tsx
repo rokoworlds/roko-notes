@@ -97,10 +97,10 @@ function App() {
     <div className={bgTheme}>
     <Container className='my-4'>
       <Routes>
-        <Route path='/' element={<NoteList notes={notesWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag}/>}></Route>
-        <Route path='/new' element={<NewNote onSubmit={onCreateNote} onAddTag={addTag} availableTags={tags}/>} />
-        <Route path='*' element={<Navigate to='/' />} />
-        <Route path='/:id' element={<NoteLayout notes={notesWithTags}/>}>
+        <Route path='/roko-notes' element={<NoteList notes={notesWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag}/>}></Route>
+        <Route path='/roko-notes/new' element={<NewNote onSubmit={onCreateNote} onAddTag={addTag} availableTags={tags}/>} />
+        <Route path='*' element={<Navigate to='/roko-notes/' />} />
+        <Route path='/roko-notes/:id' element={<NoteLayout notes={notesWithTags}/>}>
           <Route index element={<Note onDelete={onDeleteNote} />} />
           <Route path='edit' element={<EditNote onSubmit={onUpdateNote} onAddTag={addTag} availableTags={tags} />}/>
         </Route>
